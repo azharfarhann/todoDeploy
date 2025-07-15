@@ -30,7 +30,7 @@ const app = express();
 
 app.use(morgan("dev"));
 
-const allowedDomains = ["http://localhost:5173","http://localhost:5174"];
+const allowedDomains = ["http://localhost:5173","http://localhost:5174", "https://taskly.azharr.live"];
 
 const domainOptions = {
   origin: function (origin, callback) {
