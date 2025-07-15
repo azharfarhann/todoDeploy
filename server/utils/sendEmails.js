@@ -7,7 +7,7 @@ const sendEmail = async (emailData) => {
     let userEmail = process.env.EMAIL;
     let password = process.env.PASSWORD;
     let companyName = process.env.COMPANY_NAME;
-    let URL = process.env.URL;
+    
 
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
