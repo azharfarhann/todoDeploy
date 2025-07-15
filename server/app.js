@@ -57,7 +57,7 @@ app.use(express.json()); // to accpt dat for post, put
 
 
 
-const buildPath = path.join(__dirname, "build");
+const buildPath = path.join(__dirname, "dist");
 if (fs.existsSync(buildPath)) {
   app.use(express.static(buildPath));
   app.get(/^\/(?!api).*/, (req, res) => {
