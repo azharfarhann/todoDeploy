@@ -17,7 +17,6 @@ import privateRouter from "./controllers/private/index.js";
 // import middlwares
 import authMiddelware from "./middlewares/verifyToken.js";
 
-// security
 import rateLimit from "express-rate-limit";
 
 // dbConnection
@@ -80,7 +79,6 @@ app.use(authMiddelware);
 
 app.use("/api/private", privateRouter);
 
-// Not Found Route
 app.use((req, res, next) => {
   res.status(404).json({ msg: "API route not found", path: req.originalUrl });
 });
@@ -91,7 +89,6 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).json({ msg: "Internal Server Error" });
 });
 
-// Start the server Route
 app.listen(PORT, () => {
   console.log(`Server is Up and Running at ${PORT}`);
 });

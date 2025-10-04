@@ -30,10 +30,10 @@ const sendEmail = async (emailData) => {
     const info = await transporter.sendMail(mailOptions);
 
     console.log(
-      `✅ Email sent to ${emailData.to} (Message ID: ${info.messageId})`
+      ` Email sent to ${emailData.to} (Message ID: ${info.messageId})`
     );
   } catch (err) {
-    console.error(`❌ Failed to send email to ${emailData.to}:`, err.message);
+    console.error(` Failed to send email to ${emailData.to}:`, err.message);
   }
 };
 

@@ -1,23 +1,27 @@
-# todoDeploy
-this a todo full stack project deployed at taskly.azharr.live
+# To-do App
 
-A full-stack To-Do app where you can add, edit, complete, and delete tasks. The client is built in React using different hooks (useState, useEffect, useNavigate) and communicates with an Express/Node.js backend that persists tasks. Styling is done with tailwind CSS and you’ll see clear form inputs and buttons that respond instantly as you work through your list.
+A full-stack task manager that lets users register, log in, and manage their tasks in a secure way. The app is built with **React, Node.js, Express, and MongoDB**. It provides complete CRUD functionality along with authentication and validation for a smooth experience.
 
-Features
+## Features
+- User registration and login with JWT-based authentication  
+- Secure CRUD operations for tasks (add, update, delete, view)  
+- Input validation and error handling for reliable usage  
+- Responsive design using React Hooks for seamless usage on any device  
 
-Create, update, and remove tasks
+## Tech Stack
+- Frontend: React  
+- Backend: Node.js, Express  
+- Database: MongoDB  
+- Authentication: JWT  
 
-Mark tasks as done or pending
+## Getting Started
+1. Clone the repo  
+2. Run `npm install` for both frontend and backend  
+3. Add your MongoDB connection string and JWT secret in `.env`  
+4. Start the backend server and frontend app  
+5. Open in browser and begin managing your tasks  
 
-Instant UI updates with React hooks
-
-Data saved on the server via REST endpoints
-
-Tech Stack
-React + React Hooks · Express · Node.js · Fetch/Axios · tailwindCSS
-
-Usage
-Clone, run npm install in both client/ and server/ folders, then start backend with npm run server and frontend with npm run dev. 
+# Tree
 
 ├── README.md
 ├── client

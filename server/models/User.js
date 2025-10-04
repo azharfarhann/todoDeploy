@@ -60,5 +60,5 @@ const userSchema = new mongoose.Schema(
 );
 
 const userModel = mongoose.model("User", userSchema);
-// ✅ model: "User" converts from User to ==> collection: "users"
+// model: "User" converts from User to ==> collection: "users"
 export default userModel;

@@ -203,21 +203,18 @@ router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // 1. Check for required fields
     if (!email || !password) {
       return res
         .status(400)
         .json({ msg: "Please provide email and password." });
     }
 
-    // 2. Check if user exists
     const user = await userModel.findOne({ email });
 
     if (!user) {
       return res.status(400).json({ msg: "Invalid email or password." });
     }
 
-    // 3. Check if email & phone are verified
     // if (!user.userVerifiedToken.email || !user.userVerifiedToken.phone) {
     //   return res
     //     .status(403)
@@ -228,13 +225,12 @@ router.post("/login", async (req, res) => {
       return res.status(403).json({ msg: "Please verify your email." });
     }
 
-    // 4. Compare passwords
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(400).json({ msg: "Invalid password." });
     }
 
-    // 5. Generate JWT token
+    // Generate JWT token
     const payload = {
       id: user._id,
       email: user.email,
@@ -263,7 +259,6 @@ router.get("/emailverify/:token", async (req, res) => {
       return res.status(400).json({ msg: "Token is missing." });
     }
 
-    // Find user with matching email verification token
     const user = await userModel.findOne({
       "userVerifiedToken.email": token,
     });
@@ -272,7 +267,6 @@ router.get("/emailverify/:token", async (req, res) => {
       return res.status(404).json({ msg: "Invalid or expired token." });
     }
 
-    // Update email verification status
     user.userVerifiedToken.email = null;
     user.userVerified.email = true;
 
